@@ -1,14 +1,13 @@
 using NUnit.Framework;
 
-namespace TempRiderZWSP
+namespace TempRiderZWSP;
+
+public class Tests
 {
-    public class Tests
+    [Test]
+    [TestCase("\u200B")]
+    public void Test1(string a)
     {
-        [Test]
-        [TestCase("\u200B")]
-        public void Test1(string a)
-        {
-            Assert.AreEqual(a, a);
-        }
+        Assert.That(a, Is.EqualTo(a));
     }
 }
